@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress/min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FIXME ok これでも動くし問題ないのですが、cssファイルは通常cssフォルダの中に入れるのでそのようにした方がいいです。 なぜなら複数のcssファイルを使う時があるからです！-->
+    <title>Profile</title>
+</head>
+<body>
+    <header id="header" class="wrapper">
+        <h1 class="header-logo"><a href="../index.html"><img src="images/logo.svg" alt="Profile"></a></h1>
+
+        <nav>
+            <ul class="header-nav">
+                <li><a href="about">About</a></li>
+                <li><a href="soccer">soccer</a></li>
+                <!-- FIXME ok ここはidを用いたページ内遷移を設定すると良いです。 -->
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+        <div>
+            <img class="mainvisual" src="images/応援プロジェクト.jpg" alt="原動力">
+        </div>
+
+        <section id="about" class="wrapper">
+            
+            <div class="about-soccer">
+                <h2>About</h2>
+                <!-- FIXME  ok テキストと下のborderとの間に余白がないので設定しましょう。
+                    border-bottomを引き続き使って線を引いた上で、padding-bottomをつけると下に余白がつけられます。
+                    Soccerというタイトルの方についても同様。 -->
+            </div>
+            
+            <div class="murakami">
+                <img class="yuuki" src="images/S__145620995.jpg" alt="村上優稀">
+                <!-- FIXME ok こちらの画像を丸く正方形にする必要があります。
+                    そのためにはobject-fit:coverを指定すると良いです。これは対象の画像を指定したwidth,heightに余白を出さずにハマるように
+                    縦横比を維持してセッティングしてくれます。
+                    ただ今回はそれを設定しても、一個上のmurakamiクラスにmarginが指定されていることによってうまく表示されていません。
+                    murakamiクラスのmarginは外し横幅指定にはwrapperを使いましょう。
+                 -->
+                <div class="zikosyoukai">
+                    <h3>Yuuki Murakami</h3>
+                    <p>体育会系エンジニアです。</p>
+                    <p>小学1年からサッカーを始めて、現在は関西大学体育会サッカー部でプレーしています。</p>    
+                </div>
+                
+            </div>
+            
+
+        </section>
+            
+
+        <section id="soccer" class="wrapper">
+            <div class="about-soccer">
+                <h2>Soccer</h2>    
+            </div>
+
+            <ul>
+                <!-- FIXME ここはデモサイトのソースコードを見比べてみましょう。
+                    現在の実装方法よりすっきりいく実装方法があります。
+                    まずsectionに対してwrapperクラスでwidthを設定します。
+                    そしてulの中のliに対して32%のように親要素の横幅に対する比率で横幅を指定します。
+                    等分で幅を指定したいときは今回のように自分でwidthを計算して絶対値で指定するのではなく、
+                    %で指定する方が便利です。
+                    そしてulのjustify-contentをspace-betweenに設定すると、一定の間隔を開けて
+                    並んでくれます。
+                 -->
+                <li>
+                    <img src="images/S__96370692.jpg" alt="">
+                    <h3>前田カップ</h3>
+                    <p>蹴り納めはサンタコスでフットサル！</p>
+                </li>
+                <li>
+                    <img src="images/S__157909105.jpg" alt="">
+                    <h3>関大の応援</h3>
+                    <p>ピッチとスタンド一丸となり、勝利を目指す</p>
+                </li>
+                <li>
+                    <img src="images/S__145629190.jpg" alt="">
+                    <h3>裏抜け</h3>
+                    <p>スピードを活かした裏抜けが持ち味</p>
+                </li>
+            </ul>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p><small>&copy; 2021 Profile</small></p>
+    
+    </footer>
+
+
+    
+</body>
+</html>
